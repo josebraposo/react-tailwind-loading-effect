@@ -2,11 +2,11 @@ import { FC, useState } from 'react';
 import LoadingImage from './LoadingImage';
 
 const App: FC = () => {
-  const [currentImage, setCurrentImage] = useState('/dog1.jpg');
+  const [currentImage, setCurrentImage] = useState('./dog1.jpg');
 
   const toggleImage = () => {
     setCurrentImage((prevImage) =>
-      prevImage === '/dog1.jpg' ? '/dog2.jpg' : '/dog1.jpg',
+      prevImage === './dog1.jpg' ? './dog2.jpg' : './dog1.jpg',
     );
   };
 

@@ -32,21 +32,21 @@ const CustomImage: FC<CustomImageProps> = ({
     <div className="relative">
       <div
         className={`
-           absolute inset-0 animate-pulse bg-blue-500 opacity-5 
-          ${isLoaded ? "hidden" : ""}
-        `}
+       absolute inset-0 animate-pulse bg-blue-500 opacity-5 
+      ${isLoaded ? "hidden" : ""}
+    `}
       />
       <img
-        src={imgSrc}
-        onLoad={handleLoaded}
         className={`
         ${className} 
-          ${
-            isLoaded
-              ? "opacity-100 transition-opacity ease-in duration-500"
-              : "opacity-0"
-          }
+        ${
+          isLoaded
+            ? "opacity-100 transition-opacity ease-in duration-500"
+            : "opacity-0"
+        }
         `}
+        src={imgSrc}
+        onLoad={handleLoaded}
         {...imgProps}
       />
     </div>

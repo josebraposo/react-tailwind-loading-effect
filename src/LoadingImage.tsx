@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import { ImgHTMLAttributes } from "react";
+import { FC, useEffect, useState } from 'react';
+import { ImgHTMLAttributes } from 'react';
 
 interface CustomImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -29,20 +29,20 @@ const CustomImage: FC<CustomImageProps> = ({
   };
 
   return (
-    <div className="relative">
+    <div className='relative'>
       <div
         className={`
-       absolute inset-0 animate-pulse bg-blue-500 opacity-5 
-      ${isLoaded ? "hidden" : ""}
-    `}
+           absolute inset-0 animate-pulse bg-blue-500 opacity-5 
+          ${isLoaded ? 'hidden' : ''}
+        `}
       />
       <img
         className={`
         ${className} 
         ${
           isLoaded
-            ? "opacity-100 transition-opacity ease-in duration-500"
-            : "opacity-0"
+            ? 'opacity-100 transition-opacity ease-in duration-500'
+            : 'opacity-0'
         }
         `}
         src={imgSrc}

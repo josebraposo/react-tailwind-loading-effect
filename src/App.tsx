@@ -12,7 +12,7 @@ const App: FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <LoadingImage src={currentImage} className="w-96 h-auto" />
+      <LoadingImage src={currentImage} className="w-96 h-64" />
       <button
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
         onClick={toggleImage}

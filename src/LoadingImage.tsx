@@ -11,15 +11,15 @@ const CustomImage: FC<CustomImageProps> = ({
   className,
   ...imgProps
 }: CustomImageProps) => {
-  const [imgSrc, setImgSrc] = useState(src);
+  const [currentSrc, setCurrentSrc] = useState(src);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (src !== imgSrc) {
+    if (src !== currentSrc) {
       setIsLoaded(false);
-      setImgSrc(src);
+      setCurrentSrc(src);
     }
-  }, [src, imgSrc]);
+  }, [src, currentSrc]);
 
   const handleLoaded = () => {
     // simulate slow image loading
@@ -32,7 +32,7 @@ const CustomImage: FC<CustomImageProps> = ({
     <div className='relative'>
       <div
         className={`
-           absolute inset-0 animate-pulse bg-blue-500 opacity-5 
+           absolute inset-0 animate-pulse bg-blue-500
           ${isLoaded ? 'hidden' : ''}
         `}
       />
@@ -45,7 +45,7 @@ const CustomImage: FC<CustomImageProps> = ({
             : 'opacity-0'
         }
         `}
-        src={imgSrc}
+        src={currentSrc}
         onLoad={handleLoaded}
         {...imgProps}
       />

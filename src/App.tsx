@@ -12,11 +12,11 @@ const App: FC = () => {
 
   return (
     <div className='flex flex-col items-center justify-center h-screen'>
-      <div className='w-2/3'>
+      <div className='w-2/3 max-w-2xl'>
         <LoadingImage src={imgSrc} />
       </div>
       <button
-        className='rounded-md mt-4 px-4 py-2 text-white bg-slate-700'
+        className='rounded-md mt-8 px-4 py-2 text-white bg-slate-700'
         onClick={toggleImgSrc}
       >
         Load New Image

@@ -4,11 +4,13 @@ import { ImgHTMLAttributes } from 'react';
 interface CustomImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   className?: string;
+  placeholderClassName?: string;
 }
 
 const CustomImage: FC<CustomImageProps> = ({
   src,
   className,
+  placeholderClassName,
   ...imgProps
 }: CustomImageProps) => {
   const [currentSrc, setCurrentSrc] = useState(src);
@@ -32,18 +34,19 @@ const CustomImage: FC<CustomImageProps> = ({
     <div className='relative'>
       <div
         className={`
-           absolute inset-0 animate-pulse bg-slate-700
+          ${placeholderClassName}
           ${isLoaded ? 'hidden' : ''}
+          absolute inset-0 animate-pulse bg-slate-700
         `}
       />
       <img
         className={`
-        ${className} 
-        ${
-          isLoaded
-            ? 'opacity-100 transition-opacity ease-in duration-500'
-            : 'opacity-0'
-        }
+          ${className} 
+          ${
+            isLoaded
+              ? 'opacity-100 transition-opacity ease-in duration-500'
+              : 'opacity-0'
+          }
         `}
         src={currentSrc}
         onLoad={handleLoaded}

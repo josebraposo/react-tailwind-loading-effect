@@ -32,7 +32,7 @@ const CustomImage: FC<CustomImageProps> = ({
     <div className='relative'>
       <div
         className={`
-           absolute inset-0 animate-pulse bg-blue-500
+           absolute inset-0 animate-pulse bg-slate-700
           ${isLoaded ? 'hidden' : ''}
         `}
       />
